@@ -12,6 +12,7 @@ $(function () {
     var textinput = $(".ansinput").eq(i);
     var userans = textinput.val();
     var ansbutton = $(".ansbutton").eq(i);
+    textinput.blur();
     if (correct_answers.indexOf(userans) >= 0) {
       if (i === 0 || i === 1) {
         $(".question").eq(i+1).slideDown();
@@ -25,7 +26,7 @@ $(function () {
       ansbutton.prop("disabled", true);
       ansbutton.removeClass("validbutton");
     } else {
-      alert("不正解");
+      $(".question").eq(i).effect("shake",{distance:15},500);
     }
   });
   //入力フォーム上でエンター押したら
