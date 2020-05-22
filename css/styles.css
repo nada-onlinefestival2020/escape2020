@@ -29,6 +29,11 @@ body {
   line-height: 35px;
 }
 
+.logo {
+  width: 98%;
+  margin: 90px 0 2% 0;
+}
+
 .q-img {
   width: 100%;
   background-color: rgba(2,2,2,0);
@@ -144,7 +149,7 @@ button:active {
 }
 
 .hint-content {
-  padding: 7%;
+  padding: 0 7%;
 }
 
 .hint-content p {

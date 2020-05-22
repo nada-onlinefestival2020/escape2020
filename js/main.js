@@ -13,7 +13,6 @@ $(function () {
     var userans = textinput.val();
     var ansbutton = $(".ansbutton").eq(i);
     if (correct_answers.indexOf(userans) >= 0) {
-      alert("正解")
       if (i === 0 || i === 1) {
         $(".question").eq(i+1).slideDown();
         $("html,body").animate({
@@ -39,10 +38,10 @@ $(function () {
   //アコーディオン実装
   $(".hint-header").click(function () {
     if ($(this).hasClass('open')) {
-      $(this).next(".slider").slideUp();
+      $(this).next(".slider").slideUp(500);
       $(this).removeClass("open");
     } else {
-      $(this).next(".slider").slideDown();
+      $(this).next(".slider").slideDown(500);
       $(this).addClass("open");
     }
   });
