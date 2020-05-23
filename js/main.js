@@ -18,7 +18,7 @@ $(function () {
     var imgwrapper = $(".imgwrapper").eq(i);
     var qimg = $(".q-img").eq(i);
     var hint = $(".hint").eq(i);
-    var hintheader = $(".hint-header").eq(i)
+    var hintheader = $(".hint-header").eq(i * 2);
     //テキストエリアのフォーカス解除
     textinput.blur();
     //正解なら
@@ -78,7 +78,7 @@ $(function () {
   });
   //アコーディオン実装
   $(".hint-header").click(function () {
-    if ($(".hint-header").indexOf($(this)) >= current) {
+    if ($(".hint-header").index($(this)) >= current) {
       if ($(this).hasClass('open')) {
         $(this).next(".slider").slideUp(500);
         $(this).removeClass("open");
