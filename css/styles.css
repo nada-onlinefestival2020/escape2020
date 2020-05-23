@@ -25,6 +25,11 @@ body {
     line-height: 35px;
 }
 
+.warning a {
+  text-decoration: none;
+  color: #F9D401;
+}
+
 .story {
   text-align: left;
   margin: 60px 0 100px 0;
@@ -46,17 +51,26 @@ body {
   margin: 90px 0 2% 0;
 }
 
-.q-img {
+.imgwrapper {
   width: 100%;
   background-color: rgba(2,2,2,0);
   margin: 50px 0;
   padding: 30px 0;
+  position: relative;
 }
 
 img {
   padding: 20px 0;
   width: 95%;
   box-sizing: border-box;
+}
+
+.solved {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: none;
 }
 
 .ansinput {
@@ -150,7 +164,7 @@ button:active {
   letter-spacing: 10px;
 }
 
-.hint-header:hover {
+.valid-hint-header:hover {
   cursor: pointer;
   opacity: 0.8;
 }
