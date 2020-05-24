@@ -8,9 +8,17 @@
 </head>
 <body>
   <div class="container">
-    <div class="story">
+    <img src="images/Clear.png" alt="" class="clear">
+    <div class="clear story">
       <p>見事謎を解読した君だが、得られたのはVIVIDという英単語。一体彼は何を伝えたかったのだろうか？</p>
       <p>VIVIDとは明るい・躍動的なという意味を持つ。病は気からという言葉があるが、ウイルスの蔓延にふさぎ込んでばかりいるのではなく、明るい気持ちを持ち続けるようにという彼からのメッセージなのかもしれない……</p>
     </div>
 </div>
+<script>
+  $(function() {
+    $(".clear").delay(500).queue(function () {
+      $(this).fadeIn(1000).dequeue()
+    });
+  });
+</script>
 </body>

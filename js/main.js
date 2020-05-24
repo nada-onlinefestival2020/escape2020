@@ -24,35 +24,35 @@ $(function () {
     //正解なら
     if (correct_answers.indexOf(userans) >= 0) {
       current += 2;
+      //問題の場所まで戻って
+      $("html,body").animate({
+        scrollTop: imgwrapper.offset().top + imgwrapper.height() / 2 - $(window).height() / 2
+      });
+      //問題を解決された状態に
+      solved.delay(1000).queue(function () {
+        $(this).fadeIn().dequeue();
+        qimg.animate({
+          'opacity': '0.7'
+        });
+        ansbutton.animate({
+          'opacity': '0.7'
+        });
+        textinput.animate({
+          'opacity': '0.7'
+        });
+        hint.animate({
+          'opacity': '0.7'
+        });
+        if (hintheader.hasClass('open')) {
+          hintheader.next(".slider").slideUp(500);
+        }
+        hintheader.removeClass("valid-hint-header");
+        textinput.prop("disabled", true);
+        ansbutton.prop("disabled", true);
+        ansbutton.removeClass("validbutton");
+      })
       //第一問と第二問の処理
       if (i === 0 || i === 1) {
-        //問題の場所まで戻って
-        $("html,body").animate({
-          scrollTop: imgwrapper.offset().top + imgwrapper.height() / 2 - $(window).height() / 2
-        });
-        //問題を解決された状態に
-        solved.delay(1000).queue(function () {
-          $(this).fadeIn().dequeue();
-          qimg.animate({
-            'opacity': '0.7'
-          });
-          ansbutton.animate({
-            'opacity': '0.7'
-          });
-          textinput.animate({
-            'opacity': '0.7'
-          });
-          hint.animate({
-            'opacity': '0.7'
-          });
-          if (hintheader.hasClass('open')) {
-            hintheader.next(".slider").slideUp(500);
-          }
-          hintheader.removeClass("valid-hint-header");
-          textinput.prop("disabled", true);
-          ansbutton.prop("disabled", true);
-          ansbutton.removeClass("validbutton");
-        })
         //次の問題を開いて飛ぶ
         $("html,body").delay(2000).queue(function () {
           $(".question").eq(i + 1).slideDown();
@@ -62,7 +62,9 @@ $(function () {
         });
       } else {
         //最後の謎をクリアしたらクリアページに飛ぶ
-        window.location.href ="clear.html"
+        $("html,body").delay(2000).queue(function () {
+          window.location.href = "clear.html"
+        })
       };
     } else {
       //間違っとたら揺らす
