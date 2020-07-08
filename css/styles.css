@@ -28,14 +28,20 @@ body {
     line-height: 35px;
 }
 
-.warning a {
+.info p {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 32px;
+  color: #FFFFF5;
+}
+
+a {
   text-decoration: none;
   color: #F9D401;
 }
 
 .story {
   text-align: left;
-  margin: 60px 0 100px 0;
+  margin: 60px 0 50px 0;
   width: 100%;
   border: solid 2px #FFFFF5;
   padding: 20px 30px;
@@ -120,7 +126,7 @@ img {
 }
 
 .ansbutton {
-  margin: 40px 0 100px 0;
+  margin: 40px 0 60px 0;
   border: solid 2px #19171C;
   width: 30%;
   height: 60px;
@@ -228,11 +234,17 @@ button:active {
   vertical-align: middle;
   border-bottom: dotted 3px #FFFFF5;
 }
-.separator::before {
+.question .separator {
+  margin-top: 120px;
+}
+.question .separator::before {
   margin-right: 30px;
 }
-.separator::after {
+.question .separator::after {
   margin-left: 30px;
+}
+.separator::before {
+  margin-right: 3.3px;
 }
 
 .clear {
